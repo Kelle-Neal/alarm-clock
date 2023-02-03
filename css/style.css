@@ -34,7 +34,3 @@ body {
   #active-alarm {
     display: none;
   }
-  #alarm-alert {
-    color: darkcyan
-    font-size: 10px;
-  }

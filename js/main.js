@@ -1,8 +1,5 @@
 var alarmString = null;
 
-// Select HTML5 Audio element
-const alarmAudio = document.getElementById("alarm-audio");
-
 // Select DOM element with create-alarm id
 const createAlarm = document.querySelector(".create-alarm");
 
@@ -14,10 +11,6 @@ const clearAlarm = document.getElementById("clear-alarm");
 const alarmTextContainer = document.getElementById("alarm-text");
 
 const alarmText = (time) => `Alarm set at time ${time}`;
-
-// Initialize alarm window
-const alarmAlert = document.getElementById("alarm-alert")
-
 
 // Handle Create Alarm submit
 const handleSubmit = (event) => {
@@ -52,13 +45,13 @@ document.forms[0].addEventListener("submit", handleSubmit);
 
 // Function to check if alarm needs to be triggered
 const checkAlarm = (timeString) => {
-  if (alarmString === timeString) {
+  if (alarmString == timeString) {
     alert("It's Time!!");
   }
 };
 
 // Function to convert time to string value
-const getTimeString = ({ hours, minutes, seconds, zone }) => {
+function getTimeString({ hours, minutes, seconds, zone }) {
   if (minutes / 10 < 1) {
     minutes = "0" + minutes;
   }
@@ -66,7 +59,7 @@ const getTimeString = ({ hours, minutes, seconds, zone }) => {
     seconds = "0" + seconds;
   }
   return `${hours}:${minutes}:${seconds} ${zone}`;
-};
+}
 
 // Function to display current time on screen
 const renderTime = () => {
